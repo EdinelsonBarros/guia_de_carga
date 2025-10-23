@@ -1,0 +1,6 @@
+.upload-label{
+	color : white;
+	font: 1.3rem;
+	padding: 5px;
+	background: linear-gradient(156deg,rgba(168, 168, 168, 1) 0%, rgba(171, 169, 169, 1) 50%, rgba(89, 88, 83, 1) 100%);
+}
