@@ -10,6 +10,8 @@ public class Limpeza {
     private static final Pattern CARACTERES_CONTROLE_PATTERN = Pattern.compile("[\\n\\r\\p{C}]");
     
     // Regex para todos os caracteres que NÃO são letra, número ou espaço.
+    
+    private static final Pattern LIMPA_COLUNA_NUMERICA_PATTERN = Pattern.compile("[^0-9 ]");
     private static final Pattern CARACTERES_ESPECIAIS_PATTERN = Pattern.compile("[^a-zA-Z0-9 ]");
     private static final Pattern CARACTERES_ESPECIAIS_PATTERN_PARCIAL = Pattern.compile("[^a-zA-Z0-9 ,;]");
 
@@ -22,6 +24,13 @@ public class Limpeza {
      * @param textoOriginal A string a ser desacentuada.
      * @return A string sem acentos.
      */
+    
+    public static String limpaColunaNumerica(String textoOriginal) {
+    	if(textoOriginal == null) {
+    		return ""; // alterar para mostra que tem celula vazia no arquivo
+    	}
+    	return LIMPA_COLUNA_NUMERICA_PATTERN.matcher(textoOriginal).replaceAll("");
+    }
     
     
     public static String limparAcentos(String textoOriginal) {

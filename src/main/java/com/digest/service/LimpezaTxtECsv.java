@@ -10,6 +10,18 @@ import java.util.List;
 import com.digest.limpeza.Limpeza;
 
 public class LimpezaTxtECsv {
+	
+public static void filtraPorCodificacao(String codificacao, String caminhoArquivo) throws IOException {
+	if(codificacao == "UTF-8") {
+		limparTxtECsv(caminhoArquivo);
+	} else if(codificacao == "WINDOWS-1252" || codificacao == "ISO-8859-1") {
+		limparTxtECsvANSI(caminhoArquivo);
+	} else {
+		System.out.println("Codificação do arquivo não suportada. Codificação aceitas UTF8 e ANSI");
+		
+	}
+	
+}
 
 public static void limparTxtECsv(String caminhoArquivo) throws IOException {
 		
@@ -58,4 +70,14 @@ public static void limparTxtECsv(String caminhoArquivo) throws IOException {
 	    
 	    System.out.println("Arquivo TXT/CSV limpo e salvo em: " + caminhoArquivo);
 	}
+
+
+public static void limparTxtECsvANSI(String caminhoArquivo) throws IOException {
+	//implementar lógica para arquivos ANSI
+}
+public static void limparColuna(String coluna ) {
+	
+	}
+
+
 }
