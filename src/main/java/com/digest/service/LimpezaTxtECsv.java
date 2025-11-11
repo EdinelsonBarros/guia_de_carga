@@ -11,10 +11,15 @@ import com.digest.limpeza.Limpeza;
 
 public class LimpezaTxtECsv {
 	
-public static void filtraPorCodificacao(String codificacao, String caminhoArquivo) throws IOException {
+public static void filtraPorCodificacao(Path filePath) throws IOException {
+	
+	String codificacao = DetectorCodificacao.detectarCodificacao(filePath);
+	
 	if(codificacao == "UTF-8") {
+		String caminhoArquivo = filePath.toString();
 		limparTxtECsv(caminhoArquivo);
 	} else if(codificacao == "WINDOWS-1252" || codificacao == "ISO-8859-1") {
+		String caminhoArquivo = filePath.toString();
 		limparTxtECsvANSI(caminhoArquivo);
 	} else {
 		System.out.println("Codificação do arquivo não suportada. Codificação aceitas UTF8 e ANSI");

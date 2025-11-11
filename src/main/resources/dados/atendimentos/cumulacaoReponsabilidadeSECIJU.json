@@ -1,0 +1,55 @@
+	{
+		"option":"Cumulação - SECIJU",
+		"nome_it": "Tutorial Carga de cumulaçao de responsabilidades - SECIJU",
+		"descricao_it": "Este tutorial orienta o atendimento referente a Cumulação de Responsabilidades, órgão SECIJU.",
+		"vias": {
+			"tela": {
+				"descricao_it_tela": "Este tutorial orienta o preenchimento correto e o envio do arquivo .csv na tela Carga de Atributos do sistema Ergon, referente a Cumulação de Responsabilidades, órgão SECIJU.",
+				"passos": [
+					{ "passo01": "Abra o Arquivo baixado do MANTIS" },
+					{ "passo02": "Ajuste as colunas para seguir a ordem correta que está definida no padrão." },
+					{ "passo03": "Após formatar os dados corretamente, delete a linha do cabeçalho. Ela não é lida pela rotina desenvolvida para esta tela." },
+					{ "passo04": "Salve como: CSV (separado por vírgulas) (*.csv). Nome: CUMULACAO - MANTIS 00000 ARQX.csv (conforme o definido pelo MANTIS)" },
+					{ "passo05": "Salve como: CSV (separado por vírgulas) (*.csv). Nome: CUMULACAO - MANTIS 00000 ARQX.csv (conforme o definido pelo MANTIS)" },
+					{ "passo06": "Abra o Sistema Ergon. Clique em: Histórico Fucncional -> Atributos -> Carga de atributos" },
+					{ "passo07": "Na tela Carga de Atributos, clique no campo Layout e tecle F9." },
+					{ "passo08": "Escolha o layout CUMULACAO RESPONSAB." },
+					{ "passo09": "Clique no ícone de pastinha ao lado do campo Arquivo de Carga." },
+					{ "passo11": "Localize o arquivo .csv salvo para sua carga." },
+					{ "passo12": "Na seção modo de carga marque a opção: Somente inserir registros novos(essa é a opção padrão). Obs: Use a opção Desfazer Carga apenas em caso de desfazer uma carga com erro." },
+					{ "passo13": "Clique em efetuar cargar" }
+				],
+				"colunas": [
+					{ "nome": "NOME", "tipo": "STRING" },
+					{ "nome": "NUMFUNC", "tipo": "NUMBER" },
+					{ "nome": "NUMVINC", "tipo": "NUMBER" },
+					{ "nome": "CPF", "tipo": "NUMBER" },
+					{ "nome": "CARGO", "tipo": "STRING" },
+					{ "nome": "LOTACAO", "tipo": "STRING", "escape": "PONTO" },
+					{ "nome": "VANTAGEM", "tipo": "STRING"},
+					{ "nome": "TIPO_CUMULACAO", "tipo": "STRING" },
+					{ "nome": "DTINI", "tipo": "DATA" },
+					{ "nome": "DTFIM", "tipo": "DATA" },
+					{ "nome": "QUANT_DIAS_HORAS" },
+					{ "nome": "PERCENT" }
+				]				
+			},
+			"banco": { 
+				"descricao_it_banco": "Este tutorial orienta atendimento via banco, referente a Cumulação de Responsabilidades, órgão SECIJU.",
+				"colunas": [
+					{ "nome": "NOME", "tipo": "STRING" },
+					{ "nome": "NUMFUNC", "tipo": "NUMBER" },
+					{ "nome": "NUMVINC", "tipo": "NUMBER" },
+					{ "nome": "CPF", "tipo": "NUMBER" },
+					{ "nome": "CARGO", "tipo": "STRING" },
+					{ "nome": "LOTACAO", "tipo": "STRING", "escape": "PONTO" },
+					{ "nome": "VANTAGEM", "tipo": "STRING"},
+					{ "nome": "TIPO_CUMULACAO", "tipo": "STRING" },
+					{ "nome": "DTINI", "tipo": "DATA" },
+					{ "nome": "DTFIM", "tipo": "DATA" },
+					{ "nome": "QUANT_DIAS_HORAS" },
+					{ "nome": "PERCENT" }
+				]				
+			}
+		}
+	}

@@ -28,6 +28,11 @@
               <MenuItem mnemonicParsing="false" text="Abrir Módulo" onAction="#handleMenuLimpeza"/>
             </items>
           </Menu>
+          <Menu mnemonicParsing="false" text="Atendimentos">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Abrir Módulo" onAction="#handleTelaAtendimentos"/>
+            </items>
+          </Menu>
         </menus>
       </MenuBar>
    </top>

@@ -7,6 +7,8 @@ import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.layout.BorderPane;
 import java.io.IOException;
+import java.nio.file.Path;
+
 import javafx.stage.FileChooser;
 import javafx.stage.Stage; 
 import javafx.event.ActionEvent; 
@@ -39,6 +41,12 @@ public class MainController {
     }
     
     @FXML
+    private void handleTelaAtendimentos() {
+    	// Carrega e exibe a tela de Atendimentos
+    	loadScreen("TelaAtendimentos.fxml");
+    }
+    
+    @FXML
     private void handleUploadButtonAction(ActionEvent event) {
         
         // 1. Cria o FileChooser
@@ -46,10 +54,10 @@ public class MainController {
         fileChooser.setTitle("Selecione o Arquivo para Limpeza (.txt ou .csv)");
         
         // Opcional: Filtros para tipos de arquivo (Txt e Csv)
+        FileChooser.ExtensionFilter extFilterCsv = 
+        		new FileChooser.ExtensionFilter("Arquivos CSV (*.csv)", "*.csv");
         FileChooser.ExtensionFilter extFilterTxt = 
             new FileChooser.ExtensionFilter("Arquivos de Texto (*.txt)", "*.txt");
-        FileChooser.ExtensionFilter extFilterCsv = 
-            new FileChooser.ExtensionFilter("Arquivos CSV (*.csv)", "*.csv");
         fileChooser.getExtensionFilters().addAll(extFilterTxt, extFilterCsv);
         
         // 2. Obtém a janela (Stage) principal para que o FileChooser seja modal
@@ -60,20 +68,17 @@ public class MainController {
         File selectedFile = fileChooser.showOpenDialog(stage);
         
         if (selectedFile != null) {
-            String caminhoArquivo = selectedFile.getAbsolutePath();
-            
-            System.out.println("Arquivo selecionado: " + caminhoArquivo);
+        	Path filePath = selectedFile.toPath();
             
             // 4. Chama o Serviço de Limpeza
             try {
-                LimpezaTxtECsv.limparTxtECsv(caminhoArquivo);
-                
-                // Opcional: Adicionar lógica de feedback de sucesso (ex: Label na tela)
-                System.out.println("Limpeza concluída com sucesso para: " + caminhoArquivo);
+            	
+            	
+                LimpezaTxtECsv.filtraPorCodificacao(filePath);             
                 
             } catch (IOException e) {
                 // Opcional: Adicionar lógica de feedback de erro (ex: Alerta ou Label)
-                System.err.println("Erro ao processar o arquivo: " + caminhoArquivo);
+                System.err.println("Erro ao processar o arquivo: ");
                 e.printStackTrace();
             }
             
