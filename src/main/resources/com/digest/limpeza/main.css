@@ -4,3 +4,74 @@
 	padding: 5px;
 	background: linear-gradient(156deg,rgba(168, 168, 168, 1) 0%, rgba(171, 169, 169, 1) 50%, rgba(89, 88, 83, 1) 100%);
 }
+
+/* estilo para os cards de coluna: aparência "flutuante", agora com background solicitado */
+.column-card {
+    -fx-background-color: #e4e3e1; /* cor de background do card solicitada */
+    -fx-background-radius: 8px;
+    -fx-border-radius: 8px;
+    -fx-padding: 10px 12px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 6, 0.0, 0, 2); /* sombra sutil */
+    -fx-border-color: rgba(0,0,0,0.08); /* borda discreta */
+    -fx-border-width: 1px;
+    -fx-cursor: hand;
+    -fx-pref-width: 260px; /* largura uniforme */
+    -fx-max-width: 260px;
+}
+
+.column-card:hover {
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.12), 10, 0.0, 0, 4);
+    -fx-translate-y: -2; /* leve elevação ao hover */
+}
+
+/* container invisível */
+.flow-pane-cards {
+    -fx-background-color: transparent;
+}
+
+/* estilo para o nome do campo dentro do card: badge com fundo claro e texto cinza */
+.col-name {
+    -fx-background-color: #f3f2f1; /* fundo suave do badge */
+    -fx-text-fill: #9f9e9d; /* cor solicitada para o texto */
+    -fx-font-weight: bold;
+    -fx-padding: 6px 10px; /* padding para parecer um badge */
+    -fx-background-radius: 6px;
+    -fx-alignment: center-left;
+    -fx-max-width: 220px;
+    -fx-wrap-text: true; /* permite wrap se o texto for longo */
+}
+
+/* notas: se preferir outra largura fixa para os cards, ajuste -fx-pref-width acima */
+
+/* Estilos para o contêiner principal do card (o VBox) */
+.root-card {
+    /* Estilos do card principal */
+    -fx-background-color: white; 
+    -fx-border-color: #e0e0e0;
+    -fx-border-width: 1;
+    -fx-border-radius: 6; 
+    -fx-background-radius: 6;
+    /* Define uma largura padrão para melhor visualização no FlowPane */
+    -fx-max-width: 200.0; 
+    -fx-pref-width: 200.0;
+}
+
+/* Estilos para a Barra Superior (HBox) */
+.card-header {
+    -fx-background-color: #cccccc; /* Cor cinza da barra */
+    /* Arredonda apenas os cantos superiores para seguir o contorno do VBox pai */
+    -fx-background-radius: 6 6 0 0; 
+    -fx-pref-height: 30.0;
+}
+
+/* Estilos para o Nome da Coluna */
+.nome-coluna {
+    -fx-font-weight: bold; 
+    -fx-font-size: 14;
+}
+
+/* Estilos para o Tipo da Coluna */
+.tipo-coluna {
+    -fx-text-fill: #666666; 
+    -fx-font-size: 12;
+}

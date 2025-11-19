@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<!-- ColumnCard.fxml neutralizado — recurso criado durante experimentos de UI; mantido como placeholder para compatibilidade. 
+<HBox xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.digest.limpeza.ColumnCardController" fx:id="root" spacing="10.0">
+    <padding>
+        <Insets top="8" right="10" bottom="8" left="10" />
+    </padding>
+    <VBox spacing="4.0" fillWidth="false">
+        <Label fx:id="nomeLabel" text="Nome da coluna" wrapText="false">
+            <styleClass>
+                <String fx:value="col-name" />
+            </styleClass>
+        </Label>
+        <Label fx:id="tipoLabel" text="Tipo" />
+    </VBox>
+</HBox>-->
+
+<VBox xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" 
+      fx:controller="com.digest.limpeza.ColumnCardController"
+      styleClass="main"> 
+      
+    <HBox styleClass="card-header">
+        <padding>
+            <Insets top="4" right="10" bottom="4" left="10" />
+        </padding>
+    </HBox>
+
+    <VBox spacing="4.0">
+        <padding>
+            <Insets top="8" right="10" bottom="8" left="10" />
+        </padding>
+        
+        <Label fx:id="nomeLabel" text="Nome da coluna" styleClass="nome-coluna" wrapText="true" />
+        <Label fx:id="tipoLabel" text="Tipo" styleClass="tipo-coluna" />
+    </VBox>
+    
+</VBox>
